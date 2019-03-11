@@ -21,7 +21,7 @@
 #include "ble/services/HeartRateService.h"
 #include "pretty_printer.h"
 
-const static char DEVICE_NAME[] = "Heartrate";
+const static char DEVICE_NAME[] = "ORL_HaRM";
 
 static events::EventQueue event_queue(/* event count */ 16 * EVENTS_EVENT_SIZE);
 

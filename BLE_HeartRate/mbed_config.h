@@ -25,14 +25,14 @@
 #define ATT_NUM_SIMUL_NTF                                  1                   // set by library:cordio
 #define ATT_NUM_SIMUL_WRITE_CMD                            0//1                   // set by library:cordio
 #define BLE_FEATURE_EXTENDED_ADVERTISING                   0//1                   // set by library:ble
-#define BLE_FEATURE_GATT_CLIENT                            0//1                   // set by library:ble
+#define BLE_FEATURE_GATT_CLIENT                            1                   // set by library:ble
 #define BLE_FEATURE_GATT_SERVER                            1                   // set by library:ble
 #define BLE_FEATURE_PERIODIC_ADVERTISING                   0//1                   // set by library:ble
 #define BLE_FEATURE_PHY_MANAGEMENT                         0//1                   // set by library:ble
 #define BLE_FEATURE_PRIVACY                                0//1                   // set by library:ble
 #define BLE_FEATURE_SECURE_CONNECTIONS                     0//1                   // set by library:ble
 #define BLE_FEATURE_SECURITY                               1                   // set by library:ble
-#define BLE_FEATURE_SIGNING                                0//1                   // set by library:ble
+#define BLE_FEATURE_SIGNING                                1                   // set by library:ble
 #define BLE_FEATURE_WHITELIST                              0//1                   // set by library:ble
 #define BLE_ROLE_BROADCASTER                               1                   // set by library:ble
 #define BLE_ROLE_CENTRAL                                   0//1                   // set by library:ble
@@ -78,7 +78,7 @@
 #define MBED_CONF_TARGET_DEEP_SLEEP_LATENCY                0                   // set by target:Target
 #define MBED_CONF_TARGET_MPU_ROM_END                       0x0fffffff          // set by target:Target
 #define MBED_CONF_TARGET_TICKLESS_FROM_US_TICKER           0                   // set by target:Target
-#define SEC_CCM_CFG                                        0//1                   // set by library:cordio
+#define SEC_CCM_CFG                                        1                   // set by library:cordio
 #define SMP_DB_MAX_DEVICES                                 0//3                   // set by library:cordio
 #define TICK_MS                                            10                  // set by target:STEVAL_IDB008V2
 
