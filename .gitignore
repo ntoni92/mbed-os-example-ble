@@ -43,7 +43,7 @@ GettingStarted.html
 # mbed build system
 mbed-os/
 mbed_settings.py
-# mbed_config.h
+mbed_config.h
 *.pyc
 TARGET_CORDIO_BLUENRG/
 
