@@ -18,10 +18,10 @@
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STBlueNRG-2_DFP.1.0.1</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>CPUTYPE("Cortex-M0") </Cpu>
+          <Cpu>IRAM(0x20000000,0x6000) IROM(0x10040000,0x40000) CPUTYPE("Cortex-M0") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD536870912 -FC1000 -FN0 )</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD200002CC -FC1000 -FN1 -FF0STBlueNRG2 -FS010040000 -FL040000 -FP0($$Device:BlueNRG-2$Flash\STBlueNRG2.FLM))</FlashDriverDll>
           <DeviceId>0</DeviceId>
           <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
@@ -109,13 +109,13 @@
           <ComprImg>1</ComprImg>
         </CommonProperty>
         <DllOption>
-          <SimDllName></SimDllName>
-          <SimDllArguments> </SimDllArguments>
-          <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments></SimDlgDllArguments>
+          <SimDllName>SARMCM3.DLL</SimDllName>
+          <SimDllArguments> -REMAP </SimDllArguments>
+          <SimDlgDll>DARMCM1.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM0</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments></TargetDllArguments>
-          <TargetDlgDll>TCM.DLL</TargetDlgDll>
+          <TargetDllArguments> </TargetDllArguments>
+          <TargetDlgDll>TARMCM1.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM0</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
@@ -179,8 +179,8 @@
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
-            <hadIROM>0</hadIROM>
-            <hadIRAM>0</hadIRAM>
+            <hadIROM>1</hadIROM>
+            <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
@@ -244,13 +244,13 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x6000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x10040000</StartAddress>
+                <Size>0x40000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -274,8 +274,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x20000</Size>
+                <StartAddress>0x10040000</StartAddress>
+                <Size>0x40000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -300,12 +300,12 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x2000</Size>
+                <Size>0x6000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x1fffe000</StartAddress>
-                <Size>0x2000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -336,7 +336,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>-fdata-sections -Wno-armcc-pragma-anon-unions -fno-exceptions -g -c --target=arm-arm-none-eabi -fshort-enums -fshort-wchar -mthumb -Wno-armcc-pragma-push-pop -fno-rtti -mcpu=cortex-m0 -include mbed_config.h</MiscControls>
-              <Define>DEVICE_SLEEP=1 BLE_STACK_CONFIGURATION=BLE_STACK_BASIC_CONFIGURATION COMPONENT_NSPE=1 MBED_BUILD_TIMESTAMP=1552294957.78 __ASSERT_MSG TARGET_STEVAL_IDB008V2 CMSIS_VECTAB_VIRTUAL_HEADER_FILE=\"cmsis_nvic.h\" TARGET_STMBLUE TARGET_BLUENRG2 TARGET_NAME=STEVAL_IDB008V2 CMSIS_VECTAB_VIRTUAL LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ DEVICE_STDIO_MESSAGES=1 TARGET_RELEASE TARGET_LIKE_MBED DEVICE_SERIAL_FC=1 TARGET_LIKE_CORTEX_M0 ARM_MATH_CM0 TARGET_CORTEX TARGET_CORTEX_M DEVICE_SERIAL=1 MULADDC_CANNOT_USE_R7 MBED_RAM_START=0x20000000 DEVICE_USTICKER=1 BLUENRG2_DEVICE COMPONENT_PSA_SRV_IMPL=1 DEVICE_INTERRUPTIN=1 COMPONENT_PSA_SRV_EMUL=1 TOOLCHAIN_ARM __CORTEX_M0 TOOLCHAIN_ARM_STD MBED_ROM_START=0x10040000 DEVICE_SERIAL_ASYNCH=1 __MBED__=1 __MBED_CMSIS_RTOS_CM MBED_TRAP_ERRORS_ENABLED=1 SMPS_INDUCTOR=SMPS_INDUCTOR_10uH TARGET_CORDIO MBED_DEBUG MBED_RAM_SIZE=0x6000 TARGET_M0 __CMSIS_RTOS MBED_ROM_SIZE=0x40000 FEATURE_BLE=1 TOOLCHAIN_ARMC6</Define>
+              <Define>DEVICE_SLEEP=1 BLE_STACK_CONFIGURATION=BLE_STACK_BASIC_CONFIGURATION COMPONENT_NSPE=1 MBED_BUILD_TIMESTAMP=1552310275.93 __ASSERT_MSG TARGET_STEVAL_IDB008V2 CMSIS_VECTAB_VIRTUAL_HEADER_FILE=\"cmsis_nvic.h\" TARGET_STMBLUE TARGET_BLUENRG2 TARGET_NAME=STEVAL_IDB008V2 CMSIS_VECTAB_VIRTUAL LS_SOURCE=LS_SOURCE_EXTERNAL_32KHZ DEVICE_STDIO_MESSAGES=1 TARGET_RELEASE TARGET_LIKE_MBED DEVICE_SERIAL_FC=1 TARGET_LIKE_CORTEX_M0 ARM_MATH_CM0 TARGET_CORTEX TARGET_CORTEX_M DEVICE_SERIAL=1 MULADDC_CANNOT_USE_R7 DEVICE_USTICKER=1 BLUENRG2_DEVICE COMPONENT_PSA_SRV_IMPL=1 DEVICE_INTERRUPTIN=1 COMPONENT_PSA_SRV_EMUL=1 TOOLCHAIN_ARM __CORTEX_M0 TOOLCHAIN_ARM_STD DEVICE_SERIAL_ASYNCH=1 __MBED__=1 __MBED_CMSIS_RTOS_CM MBED_TRAP_ERRORS_ENABLED=1 SMPS_INDUCTOR=SMPS_INDUCTOR_10uH TARGET_CORDIO MBED_DEBUG TARGET_M0 __CMSIS_RTOS FEATURE_BLE=1 TOOLCHAIN_ARMC6</Define>
               <Undefine></Undefine>
               <IncludePath>.;mbed-os;mbed-os\cmsis;mbed-os\cmsis\TARGET_CORTEX_M;mbed-os\drivers;mbed-os\events;mbed-os\events\equeue;mbed-os\features\FEATURE_BLE;mbed-os\features\FEATURE_BLE\ble;mbed-os\features\FEATURE_BLE\ble\common;mbed-os\features\FEATURE_BLE\ble\gap;mbed-os\features\FEATURE_BLE\ble\generic;mbed-os\features\FEATURE_BLE\ble\pal;mbed-os\features\FEATURE_BLE\ble\services;mbed-os\features\FEATURE_BLE\source;mbed-os\features\FEATURE_BLE\source\gap;mbed-os\features\FEATURE_BLE\source\generic;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\driver;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\source;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\include;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\hci;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\hci\dual_chip;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\sec;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\sec\common;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\att;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\cfg;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\dm;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\hci;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\l2c;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\ble-host\sources\stack\smp;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\platform;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\platform\include;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf\include;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf\include\util;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf\sources;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf\sources\port;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack\wsf\sources\port\baremetal;mbed-os\features\FEATURE_BLE\targets\TARGET_CORDIO\stack_adaptation;mbed-os\hal;mbed-os\hal\storage_abstraction;mbed-os\platform;mbed-os\targets\TARGET_STMBLUE;mbed-os\targets\TARGET_STMBLUE\Bluetooth_LE;mbed-os\targets\TARGET_STMBLUE\Bluetooth_LE\inc;mbed-os\targets\TARGET_STMBLUE\DTM;mbed-os\targets\TARGET_STMBLUE\DTM\inc;mbed-os\targets\TARGET_STMBLUE\Periph_Driver;mbed-os\targets\TARGET_STMBLUE\Periph_Driver\inc;mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG2\TARGET_STEVAL_IDB008V2;mbed-os\targets\TARGET_STMBLUE\TARGET_BLUENRG2\TARGET_STEVAL_IDB008V2\device;mbed-os\targets\TARGET_STMBLUE\cryptolib;mbed-os\targets\TARGET_STMBLUE\cryptolib\inc;mbed-os\targets\TARGET_STMBLUE\cryptolib\inc\AES;mbed-os\targets\TARGET_STMBLUE\cryptolib\inc\AES\CMAC;mbed-os\targets\TARGET_STMBLUE\cryptolib\inc\AES\Common;mbed-os\targets\TARGET_STMBLUE\cryptolib\inc\Common;mbed-os\targets\TARGET_STMBLUE\hal;mbed-os\targets\TARGET_STMBLUE\hal\inc;source;D:\Documenti\GitHub\PROVA\mbed-os-example-ble\BLE_HeartRate\mbed-os</IncludePath>
             </VariousControls>
@@ -366,13 +366,13 @@
             <noStLib>0</noStLib>
             <RepFail>0</RepFail>
             <useFile>0</useFile>
-            <TextAddressRange>0</TextAddressRange>
-            <DataAddressRange>0</DataAddressRange>
+            <TextAddressRange>0x10040000</TextAddressRange>
+            <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
             <ScatterFile>.\.link_script.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--remove --predefine="-DMBED_RAM_START=0x20000000" --predefine="-DMBED_RAM_SIZE=0x6000" --verbose --predefine="-DMBED_ROM_SIZE=0x40000" --legacyalign --predefine="-DMBED_ROM_START=0x10040000" --show_full_path --predefine="-DMBED_BOOT_STACK_SIZE=4096" --keep=os_cb_sections --cpu=cortex-m0</Misc>
+            <Misc>--remove --verbose --legacyalign --show_full_path --predefine="-DMBED_BOOT_STACK_SIZE=4096" --keep=os_cb_sections --cpu=cortex-m0</Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>

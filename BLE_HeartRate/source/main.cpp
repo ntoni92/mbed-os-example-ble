@@ -21,6 +21,8 @@
 #include "ble/services/HeartRateService.h"
 #include "pretty_printer.h"
 
+#include "bluenrg1_stack.h"
+
 const static char DEVICE_NAME[] = "ORL_HaRM";
 
 static events::EventQueue event_queue(/* event count */ 16 * EVENTS_EVENT_SIZE);
@@ -44,6 +46,8 @@ public:
 
         _event_queue.call_every(500, this, &HeartrateDemo::blink);
         _event_queue.call_every(1000, this, &HeartrateDemo::update_sensor_value);
+			
+				_event_queue.call_every(10, &BTLE_StackTick);
 
         _event_queue.dispatch_forever();
     }
