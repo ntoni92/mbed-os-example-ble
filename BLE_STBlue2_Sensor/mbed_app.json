@@ -1,0 +1,72 @@
+{
+    "target_overrides": {
+        "K64F": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_BLUENRG"]
+        },
+        "NUCLEO_F401RE": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_BLUENRG"],
+			"cordio.max-att-notifications": "1",
+            "cordio.max-att-writes": "0",
+            "ble.ble-feature-extended-advertising": "0",
+            "ble.ble-feature-gatt-client": "0",
+            "ble.ble-feature-gatt-server": "1",
+            "ble.ble-feature-periodic-advertising": "0",
+            "ble.ble-feature-phy-management": "0",
+            "ble.ble-feature-privacy": "0",
+            "ble.ble-feature-secure-connections": "0",
+            "ble.ble-feature-security": "1",
+            "ble.ble-feature-signing": "0",
+            "ble.ble-feature-whitelist": "0",
+            "ble.ble-role-broadcaster": "1",
+            "ble.ble-role-central": "0",
+            "ble.ble-role-observer": "0",
+            "ble.ble-role-peripheral": "1",
+            "cordio.max-connections": "1",
+            "cordio.max-advertising-sets": "1",
+            "cordio.max-phys": "0",
+            "cordio.max-syncs": "0",
+            "cordio.cmac-calculation": "0",
+            "cordio.max-smp-devices": "0"
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_BLUENRG"]
+        },
+        "NRF52840_DK": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_LL", "SOFTDEVICE_NONE", "NORDIC_CORDIO"],
+            "target.extra_labels_remove": ["SOFTDEVICE_COMMON", "SOFTDEVICE_S140_FULL", "NORDIC_SOFTDEVICE"]
+        },
+        "NRF52_DK": {
+            "target.features_add": ["BLE"],
+            "target.extra_labels_add": ["CORDIO", "CORDIO_LL", "SOFTDEVICE_NONE", "NORDIC_CORDIO"],
+            "target.extra_labels_remove": ["SOFTDEVICE_COMMON", "SOFTDEVICE_S132_FULL", "NORDIC_SOFTDEVICE"]
+        },
+        "STEVAL_IDB008V2":{
+        	"cordio.max-att-notifications": "1",
+            "cordio.max-att-writes": "0",
+            "ble.ble-feature-extended-advertising": "0",
+            "ble.ble-feature-gatt-client": "0",
+            "ble.ble-feature-gatt-server": "1",
+            "ble.ble-feature-periodic-advertising": "0",
+            "ble.ble-feature-phy-management": "0",
+            "ble.ble-feature-privacy": "0",
+            "ble.ble-feature-secure-connections": "0",
+            "ble.ble-feature-security": "1",
+            "ble.ble-feature-signing": "0",
+            "ble.ble-feature-whitelist": "0",
+            "ble.ble-role-broadcaster": "1",
+            "ble.ble-role-central": "0",
+            "ble.ble-role-observer": "0",
+            "ble.ble-role-peripheral": "1",
+            "cordio.max-connections": "1",
+            "cordio.max-advertising-sets": "1",
+            "cordio.max-phys": "0",
+            "cordio.max-syncs": "0",
+            "cordio.cmac-calculation": "0",
+            "cordio.max-smp-devices": "0"
+        }
+    }
+}
