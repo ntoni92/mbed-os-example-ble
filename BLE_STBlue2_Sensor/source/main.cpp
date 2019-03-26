@@ -168,8 +168,8 @@ private:
     bool _connected;
 
     int16_t _temp;
-    int16_t _accel[3]; //X Y Z
-    int16_t _gyro[3];  //X Y Z
+    int16_t _accel[3]; //_accel[] = {valY, valX, valZ}
+    int16_t _gyro[3];  //_gyro[] = {valY, valX, valZ}
     BluenrgSensorService _b_service;
     LSM6DS3 _imu_sensor;
 

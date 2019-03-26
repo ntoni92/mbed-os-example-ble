@@ -5,7 +5,7 @@
 
 #if BLE_FEATURE_GATT_SERVER
 
-static const char uuid_char1[] = "00140000-0001-11e1-ac36-0002a5d5c51b";
+static const char uuid_char1[] = "00040000-0001-11e1-ac36-0002a5d5c51b";
 static const char uuid_char2[] = "00e00000-0001-11e1-ac36-0002a5d5c51b";
 static const char uuid_ser[]   = "00000000-0001-11e1-9ab4-0002a5d5c51b";
 static const UUID _uuid1(uuid_char1);
@@ -86,7 +86,7 @@ protected:
     struct SensorValueBytes {
         /* 1 byte for the Flags, and up to two bytes for heart rate value. */
         static const unsigned MAX_VALUE_BYTES_IMU = 14;
-        static const unsigned MAX_VALUE_BYTES_ENV = 8;
+        static const unsigned MAX_VALUE_BYTES_ENV = 4;
         static const unsigned FLAGS_BYTE_INDEX = 0;
 
         SensorValueBytes(int16_t temp, int16_t* accelValAxis, int16_t* gyroValAxis) : envValueBytes()
@@ -100,8 +100,8 @@ protected:
         void updateTemp(int16_t temp)
         {
 
-        	envValueBytes[6] = (uint8_t)((temp+22));
-        	envValueBytes[7] = (uint8_t)((temp+22) >> 8);
+        	envValueBytes[2] = (uint8_t)((temp+22));
+        	envValueBytes[3] = (uint8_t)((temp+22) >> 8);
         }
 
 //        void updatePress(int32_t press)
